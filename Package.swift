@@ -1,4 +1,5 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.9
+
 import PackageDescription
 
 let package = Package(
@@ -9,27 +10,14 @@ let package = Package(
     products: [
         .library(
             name: "MapplsRasterCatalogue",
-            targets: ["MapplsRasterCatalogueWrapper"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/mappls-api/mappls-api-core-ios-distribution.git", from: "2.0.4"),
-        .package(url: "https://github.com/mappls-api/mappls-api-kit-ios-distribution.git", from: "3.0.0"),
-        .package(url: "https://github.com/mappls-api/mappls-map-ios-distribution.git", from: "6.0.0")
+            targets: ["MapplsRasterCatalogue"]
+        )
     ],
     targets: [
         .binaryTarget(
             name: "MapplsRasterCatalogue",
-            url: "https://mmi-api-team.s3.amazonaws.com/mappls-sdk-ios/mappls-raster-catalogue/MapplsRasterCatalogue.xcframework-2.0.0.zip",
-            checksum: "d9be072fb760a22c9de6a3a9d938a4d324acd7fd0713c1b0638f88f29ec1780f"
-        ),
-        .target(
-            name: "MapplsRasterCatalogueWrapper",
-            dependencies: [
-                "MapplsRasterCatalogue",
-                .product(name: "MapplsAPICore", package: "mappls-api-core-ios-distribution"),
-                .product(name: "MapplsAPIKit", package: "mappls-api-kit-ios-distribution"),
-                .product(name: "MapplsMap", package: "mappls-map-ios-distribution")
-            ]
-        ),
+            url: "https://mmi-api-team.s3.amazonaws.com/mappls-sdk-ios/mappls-raster-catalogue/MapplsRasterCatalogue.xcframework-1.0.1.zip",
+            checksum: "8716e5df24def6ef7b46f0c2c91f54d6b41941c99f27e2078fd7dc1043b88ff3"
+        )
     ]
 )
